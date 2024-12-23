@@ -225,7 +225,7 @@ defmodule Bun do
     download_path =
       case :zip.unzip(zip, cwd: to_charlist(tmp_dir)) do
         # OTP 27.1 and newer versions return both the unzipped folder and file
-        {:ok, items} -> List.last(item)
+        {:ok, items} -> List.last(items)
         other -> raise "couldn't unpack archive: #{inspect(other)}"
       end
 
